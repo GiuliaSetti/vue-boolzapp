@@ -76,6 +76,12 @@ i{
     border-radius: 50%;
 }
 
+.aside_container .image{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .header .icons{
     height: 100%;
     padding: 1rem;

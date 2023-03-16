@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
     
     
-    <title>Boozlapp</title>
+    <title>Boolzapp</title>
 </head>
 <body class="debug">
 
@@ -30,7 +30,7 @@
         <h1>{{message}}</h1>
     </div> -->
 
-    <main class="background">
+    <main id="app" class="background">
 
         <!-- main container -->
         <div class="container">
@@ -42,7 +42,8 @@
                 <div class="user header">
                     <!-- immagine utente -->
                     <div class="user image">
-                        <img src="img/avatar_io.jpg" alt="avatar_io">
+                        <img :src="user.avatar">
+                        <h4>{{user.name}}</h4>
                     </div>
 
                     <!-- contenitore icone -->
@@ -75,16 +76,16 @@
                 <!-- sezione contatti -->
                 <div class="contacts">
                     
-                    <div class="contact">
+                    <div v-for="(contact, index) in contacts" class="contact">
                         <div class="image">
 
-                            <img src="img/avatar_1.jpg" alt="avatar_1">
+                            <img :src="contact.avatar" :alt="contact.name">
 
                         </div>
                         <div class="contact_info">
                             <div class="name">
-                                <h4>Tizio</h4>
-                                <span>Ultimo messaggio inviato</span>
+                                <h4>{{contact.name}}</h4>
+                                <span>{{contact.messages[contact.messages.length - 1].message}}</span>
                             </div>
                             <div class="user_time">
                                 <span>12:00</span>
@@ -107,12 +108,12 @@
                     <!-- immagine header -->
                     <div class="chat image">
 
-                        <img src="img/avatar_1.jpg" alt="avatar_1">
+                        <img  :src="contacts[counter].avatar" :alt="contacts[counter].name">
 
                         <!-- nome contatto -->
                         <div class="name">
-                            <h4>Tizio</h4>
-                            <span>Ultimo messaggio inviato</span>
+                            <h4>{{contacts[counter].name}}</h4>
+                            <span>Ultimo accesso oggi alle 16:00</span>
                         </div>
                     </div>
 
@@ -131,9 +132,9 @@
               
                     <div class="messages">
 
-                        <div class="sent">
-                            <div class="messages_content">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi inventore neque enim error hic nesciunt ipsa maiores delectus fuga earum magnam cupiditate, numquam nobis deleniti quod dolorem blanditiis impedit corrupti.
+                        <div  v-for="(message, messageIndex) in contacts[counter].messages" :class="message.status == 'sent' ? 'sent' : 'received' ">
+                            <div :class="message.status == 'sent' ? 'sent' : 'received' " class="messages_content">
+                                {{contacts[counter].messages[messageIndex].message}}
                                 <div class="time">
                                     12:00
                                 </div>
@@ -141,92 +142,6 @@
                             
                         </div>
 
-                        <div class="received">
-                            <div class="messages_content">
-                                ciao
-                                <div class="time">
-                                    12:00
-                                </div>
-                            </div>
-                            
-                        </div>
-
-                        <div class="sent">
-                            <div class="messages_content">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi inventore neque enim error hic nesciunt ipsa maiores delectus fuga earum magnam cupiditate, numquam nobis deleniti quod dolorem blanditiis impedit corrupti.
-                                <div class="time">
-                                    12:00
-                                </div>
-                            </div>
-                            
-                        </div>
-
-                        <div class="received">
-                            <div class="messages_content">
-                                ciao
-                                <div class="time">
-                                    12:00
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="sent">
-                            <div class="messages_content">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi inventore neque enim error hic nesciunt ipsa maiores delectus fuga earum magnam cupiditate, numquam nobis deleniti quod dolorem blanditiis impedit corrupti.
-                                <div class="time">
-                                    12:00
-                                </div>
-                            </div>
-                            
-                        </div>
-
-                        <div class="received">
-                            <div class="messages_content">
-                                ciao
-                                <div class="time">
-                                    12:00
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="sent">
-                            <div class="messages_content">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi inventore neque enim error hic nesciunt ipsa maiores delectus fuga earum magnam cupiditate, numquam nobis deleniti quod dolorem blanditiis impedit corrupti.
-                                <div class="time">
-                                    12:00
-                                </div>
-                            </div>
-                            
-                        </div>
-
-                        <div class="received">
-                            <div class="messages_content">
-                                ciao
-                                <div class="time">
-                                    12:00
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="sent">
-                            <div class="messages_content">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi inventore neque enim error hic nesciunt ipsa maiores delectus fuga earum magnam cupiditate, numquam nobis deleniti quod dolorem blanditiis impedit corrupti.
-                                <div class="time">
-                                    12:00
-                                </div>
-                            </div>
-                            
-                        </div>
-
-                        <div class="received">
-                            <div class="messages_content">
-                                ciao
-                                <div class="time">
-                                    12:00
-                                </div>
-                            </div>
-                            
-                        </div>
 
                     </div>
                   
