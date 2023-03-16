@@ -13,6 +13,11 @@
 
 /* generali */
 
+i{
+    color: #B1B1B1;
+    font-size: 25px;
+}
+
 
 
 
@@ -44,7 +49,7 @@
 /* aside _______________________________________*/
 
 
-.contacts_container{
+.aside_container{
     height: 100%;
     width: 450px;
 }
@@ -55,6 +60,28 @@
     background-color: #eaeaea;
     height: 70px;
     border-right: 2px gray solid;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image{
+    height: 100%;
+    padding: 10px;
+}
+
+.image img{
+    height: 100%;
+    border-radius: 50%;
+}
+
+.header .icons{
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 
 
@@ -63,6 +90,28 @@
 .alerts{
     background-color: #8EDAFC;
     height: 60px; 
+
+    padding: 2rem 1rem;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.alerts i{
+    color: #8EDAFC;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.alerts div{
+    margin-bottom: 2px;
+}
+
+.alerts a{
+    color: gray;
+    font-size: 15px;
 }
 
 /* *******search_container******* */
