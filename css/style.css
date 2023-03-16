@@ -119,6 +119,18 @@ i{
 .search{
     background-color:  #F9F9F9;
     height: 50px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.search input{
+    flex-grow: 1;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
 }
 
 /* ********contatti******** */
@@ -126,6 +138,18 @@ i{
 .contacts{
     background-color: white;
     height: calc(100% - 185px);
+}
+
+.contacts .contact{
+    height: 70px;
+    display: flex;
+}
+
+.contact_info{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
 
 
