@@ -33,6 +33,7 @@ i{
       );
     height: 100vh;
     padding: 2rem;
+    width: 100vw;
 }
 
 .container{
@@ -227,8 +228,24 @@ i{
 
 /* ********footer********** */
 
-.send_footer{
+.footer{
     background-color: #F3EEEA;
     height: 60px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    padding: 1rem;
+}
+
+.emoji, .mic{
+    max-width: 50px;
+}
+
+.footer input{
+    flex-grow: 1;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
 }
 
