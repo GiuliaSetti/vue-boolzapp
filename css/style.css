@@ -8,3 +8,101 @@
     font-family: 'Roboto', sans-serif;
     outline: 1px rgba(0, 0, 0, 0.135) solid;
 }
+
+
+
+/* generali */
+
+
+
+
+/* container */
+
+.background{
+    background: linear-gradient(
+        to top,
+        #D9DBD4 0%,
+        #D9DBD4 90%,
+        #009688 10%,
+        #009688 100%
+      );
+    height: 100vh;
+    padding: 2rem;
+}
+
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 90vh;
+
+    background-color: white;
+    display: flex;
+
+    box-shadow: 1px 1px 5px gray;
+}
+
+/* aside _______________________________________*/
+
+
+.contacts_container{
+    height: 100%;
+    width: 450px;
+}
+
+/********** header_utente ***********/
+
+.header{
+    background-color: #eaeaea;
+    height: 70px;
+    border-right: 2px gray solid;
+}
+
+
+/* *********** notifiche *********** */
+
+.alerts{
+    background-color: #8EDAFC;
+    height: 60px; 
+}
+
+/* *******search_container******* */
+
+.search{
+    background-color:  #F9F9F9;
+    height: 50px;
+}
+
+/* ********contatti******** */
+
+.contacts{
+    background-color: white;
+    height: calc(100% - 185px);
+}
+
+
+/* chat __________________________________-*/
+
+.chat_container{
+    height: 100%;
+    width: calc(100% - 450px);
+}
+
+/* ************ chat_header********** */
+
+
+/* *********main_chat*********** */
+
+.main_chat{
+    width: 100%;
+    height: calc(100% - 130px);
+    background-image: url('../img/mine.jpg');
+}
+
+
+/* ********footer********** */
+
+.send_footer{
+    background-color: #F3EEEA;
+    height: 60px;
+}
+
