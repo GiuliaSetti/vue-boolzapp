@@ -162,13 +162,66 @@ i{
 
 /* ************ chat_header********** */
 
+.chat.image{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
 
 /* *********main_chat*********** */
 
 .main_chat{
     width: 100%;
     height: calc(100% - 130px);
+    display: flex;
+    align-items: center;
     background-image: url('../img/mine.jpg');
+    overflow-y: auto;
+    padding: 1rem;
+}
+  
+.messages{
+    width: 95%;
+    height: 90%;
+    margin: 0 auto;
+}
+  
+.received{
+    display: flex;
+}
+
+.sent{
+    display: flex;
+    justify-content: flex-end;
+}
+  
+.messages_content{
+    max-width: 50%;
+    margin-bottom: 10px;
+    padding: 15px 40px 10px 15px;
+    border-radius: 7px;
+    font-size: 15px;
+    position: relative;
+}
+  
+
+.received .messages_content {
+   background-color: white;
+}
+  
+.sent .messages_content{
+   background-color: #dcf8c7;
+}
+  
+.messages .time{
+    padding-top: 5px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+    position: relative;
+    left: 30px;
+    color: grey;
 }
 
 
