@@ -78,7 +78,7 @@ createApp({
                     {
                         date: "14/03/2023",
                         time: "12:25",
-                        message: "Certo! Decidi tu dove vuoi andre però, sei tu il festeggiato!",
+                        message: "Certo! Decidi tu dove vuoi andare però, sei tu il festeggiato!",
                         status: "sent",
                     },
                     {
@@ -212,7 +212,7 @@ createApp({
                     },
                     {
                         date: '10/01/2020',
-                        time: "15:510",
+                        time: "15:51",
                         message: 'OK!!',
                         status: 'received'
                     }
@@ -228,15 +228,17 @@ createApp({
 
           counter: 0,
           newMessage:"",
+          searchContact: "",
+          filtered: [],
     }
   },
 
   methods:{
 
     changeChat(index){
-          
-        this.counter= index;
 
+        this.counter = index;
+    
     },
 
     sendNewMessage(){
@@ -280,11 +282,39 @@ createApp({
      return newDate
     
 
-    }
+    },
+
+    searchChat() {
+
+        this.contacts.forEach((contact) => {
+
+            let lowerContact = contact.name.toLowerCase();
+
+            let lowerText = this.searchContact.toLowerCase();
+
+            if(lowerContact.includes(lowerText)) {
+                
+                contact.visible = true;
+
+            } else {
+
+                contact.visible = false;
+                
+            };
+
+    });
+
+    },   
+
+    
+
+   
+
+    },
 
 
 
-  }
+  
 
 
 

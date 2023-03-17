@@ -70,13 +70,14 @@
                 <!-- sezione cerca -->
                 <div class="search">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input  v-model="searchContact" @keyup="searchChat()" type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
 
                 <!-- sezione contatti -->
                 <div class="contacts">
                     
-                    <div v-for="(contact, index) in contacts" class="contact" @click="changeChat(index)" :class=" index == counter ? 'active' : ''" class="contact">
+                    <div v-for="(contact, index) in contacts" class="contact" @click="changeChat(index)" :class=" index == counter ? 'active' : ''"  
+                    v-show="contact.visible" class="contact">
                         <div class="image">
 
                             <img :src="contact.avatar" :alt="contact.name">
@@ -88,7 +89,7 @@
                                 <span class="last_text">{{contact.messages[contact.messages.length - 1].message}}</span>
                             </div>
                             <div class="user_time">
-                                <span>12:00</span>
+                                <span>{{contact.messages[contact.messages.length - 1].date}}</span>
                             </div>
                         </div>
                    
