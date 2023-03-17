@@ -76,7 +76,7 @@
                 <!-- sezione contatti -->
                 <div class="contacts">
                     
-                    <div v-for="(contact, index) in contacts" class="contact">
+                    <div v-for="(contact, index) in contacts" class="contact" @click="changeChat(index)" class="contact">
                         <div class="image">
 
                             <img :src="contact.avatar" :alt="contact.name">
@@ -85,7 +85,7 @@
                         <div class="contact_info">
                             <div class="name">
                                 <h4>{{contact.name}}</h4>
-                                <span>{{contact.messages[contact.messages.length - 1].message}}</span>
+                                <span class="last_text">{{contact.messages[contact.messages.length - 1].message}}</span>
                             </div>
                             <div class="user_time">
                                 <span>12:00</span>
@@ -113,7 +113,7 @@
                         <!-- nome contatto -->
                         <div class="name">
                             <h4>{{contacts[counter].name}}</h4>
-                            <span>Ultimo accesso oggi alle 16:00</span>
+                            <span class="access">{{contacts[counter].access}}</span>
                         </div>
                     </div>
 
@@ -132,15 +132,15 @@
               
                     <div class="messages">
 
-                        <div  v-for="(message, messageIndex) in contacts[counter].messages" :class="message.status == 'sent' ? 'sent' : 'received' ">
-                            <div :class="message.status == 'sent' ? 'sent' : 'received' " class="messages_content">
-                                {{contacts[counter].messages[messageIndex].message}}
-                                <div class="time">
-                                    12:00
-                                </div>
-                            </div>
-                            
+                        <div v-for="message in contacts[counter].messages" class="message" :class="message.status" class="message">
+                            <span>
+                                {{message.message}}
+                            </span>
+                            <div class="time">{{ message.time}}</div>
                         </div>
+                        
+                  
+                        
 
 
                     </div>
