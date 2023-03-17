@@ -241,7 +241,7 @@ createApp({
 
     sendNewMessage(){
         const newMessages = {
-            time: this.currentDate(),
+            time: this.currentTime(),
             message: this.newMessage,
             status: "sent",
         }
@@ -253,15 +253,27 @@ createApp({
         this.contacts[this.counter].messages.push(newMessages);
 
         this.newMessage = '';
+
+        setTimeout(this.messageAnswer, 1000)
     },
 
-    currentDate(){
+    messageAnswer(){
+        const newMessages = {
+            time: this.currentTime(),
+            message: 'Va bene!',
+            status: 'received'
+        }
+
+        this.contacts[this.counter].messages.push(newMessages);
+    },
+
+    currentTime(){
 
         const today = new Date();
 
         const newDate = Intl.DateTimeFormat("it-IT", {
             hour: "numeric",
-            minutes: "numeric",
+            minute: "numeric",
 
         }).format(today)
 
