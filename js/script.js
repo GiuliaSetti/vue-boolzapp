@@ -11,6 +11,9 @@
 // Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
 // Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
 
+// Milestone 4
+// Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+
 
 // console.log("prova sa sa");
 
@@ -224,6 +227,7 @@ createApp({
           // fine array contatti
 
           counter: 0,
+          newMessage:"",
     }
   },
 
@@ -234,6 +238,37 @@ createApp({
         this.counter= index;
 
     },
+
+    sendNewMessage(){
+        const newMessages = {
+            time: this.currentDate(),
+            message: this.newMessage,
+            status: "sent",
+        }
+
+        if(this.newMessage==""){
+            return false;
+        } 
+
+        this.contacts[this.counter].messages.push(newMessages);
+
+        this.newMessage = '';
+    },
+
+    currentDate(){
+
+        const today = new Date();
+
+        const newDate = Intl.DateTimeFormat("it-IT", {
+            hour: "numeric",
+            minutes: "numeric",
+
+        }).format(today)
+
+     return newDate
+    
+
+    }
 
 
 
