@@ -230,6 +230,8 @@ createApp({
           newMessage:"",
           searchContact: "",
           filtered: [],
+
+          randomAnswerArray:["Ok", "Va bene!","Non rinunciare ai tuoi sogni, continua a dormire.","Il tempo senza te è mpo.","Non è vero che sono del tutto inutile, posso essere usato come cattivo esempio.","Non dimentico mai una faccia, ma per te farò un'eccezione.", "Grazie a Dio sono ateo.","La intelligenza ti insegue, ma credo tu sia troppo veloce.","L'alcol non risolve i problemi, ma neanche l'acqua.","Se trovi difficile ridere di te stesso, sarei felice di farlo per te."]
     }
   },
 
@@ -262,7 +264,7 @@ createApp({
     messageAnswer(){
         const newMessages = {
             time: this.currentTime(),
-            message: 'Va bene!',
+            message: this.randomAnswer(),
             status: 'received'
         }
 
@@ -311,6 +313,12 @@ createApp({
     deleteMessage(index){
         this.contacts[this.counter].messages.splice(index, 1);
     },
+
+
+    randomAnswer(){
+        let randomNumber = Math.floor(Math.random() * this.randomAnswerArray.length - 1) + 1;
+        return this.randomAnswerArray[randomNumber];
+    }, 
 
 
     
