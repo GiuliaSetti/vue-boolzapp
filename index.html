@@ -89,7 +89,7 @@
                                 <span class="last_text">{{contact.messages[contact.messages.length - 1].message}}</span>
                             </div>
                             <div class="user_time">
-                                <span>{{contact.messages[contact.messages.length - 1].date}}</span>
+                                <span>{{contact.messages[contact.messages.length - 1].time}}</span>
                             </div>
                         </div>
                    
@@ -114,26 +114,36 @@
                         <!-- nome contatto -->
                         <div class="name">
                             <h4>{{contacts[counter].name}}</h4>
-                            <span class="access">{{contacts[counter].access}}</span>
+                            <span class="access">Ultimo accesso alle: {{currentTime()}}</span>
                         </div>
+
                     </div>
 
 
                     <!-- icone header chat -->
                     <div class="chat icons">
 
-                        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                        <a href="#"><i class="fa-solid fa-paperclip"></i></a>
-                        <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                        <a class="cerca" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <a class="allega" href="#"><i class="fa-solid fa-paperclip"></i></a>
+                        <a class="menu" href="#">
+                            <i @click="showMainDeleteMenu()"  id="delete_menu" class="fa-solid fa-ellipsis-vertical"></i>
+                            <div v-show="deleteMenu" id="delete_chat">
+                                <div @click="deleteAll()">Elimina tutti i messaggi</div>
+                                <div @click="deleteChat()">Elimina Chat</div>
+                            </div>
+                        </a>
+
+                        
+                       
                         
                     </div>
                 </div>
 
                 <div class="main_chat">
               
-                    <div class="messages">
+                    <div id="messages_container" class="messages">
 
-                        <div v-for="(message, messageIndex) in contacts[counter].messages" class="message" :class="message.status" class="message">
+                        <div v-for="(message, messageIndex) in contacts[counter].messages" :class="message.status" class="message">
                             
                            
                             <div class="message_text">

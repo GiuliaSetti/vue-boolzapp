@@ -10,15 +10,15 @@
 
 
 
+
 /* generali */
 
-i{
+.header i,
+.footer i,
+.search i{
     color: #B1B1B1;
     font-size: 25px;
 }
-
-
-
 
 /* container */
 
@@ -182,8 +182,9 @@ i{
 .chat_container{
     height: 100%;
     width: calc(100% - 450px);
-}
 
+    position: relative;
+}
 /* ************ chat_header********** */
 
 .chat.image{
@@ -197,6 +198,30 @@ i{
     color: dimgray;
 }
 
+#header_right_icons{
+    position: relative;
+}
+
+.icons #delete_chat{
+    background-color: white;
+
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
+.icons #delete_chat > div{
+    padding: 10px;
+    color: black;
+}
+
+.icons #delete_chat > div:hover{
+    background-color: rgb(229, 229, 229);
+}
+
+
 
 /* *********main_chat*********** */
 
@@ -204,7 +229,7 @@ i{
     width: 100%;
     height: calc(100% - 130px);
     background-image: url('../img/mine.jpg');
-    overflow-y: auto;
+    overflow-y: scroll;
     padding: 2rem;
 }
   
@@ -237,6 +262,7 @@ i{
   
 .message .time {
     text-align:end;
+    padding: 2px;
     
     color: rgb(146, 145, 145);
   
@@ -247,6 +273,7 @@ i{
 /* dropdown_menu */
 
 .message i{
+    color: dimgray;
     position: absolute;
     top: 5px;
     right: 5px;
@@ -310,3 +337,47 @@ i{
     border: none;
 }
 
+
+
+
+/* mediaquerytest */
+
+@media screen and (max-width: 895px){
+
+    .chat .access{
+        display: none;
+    }
+
+    .chat .icons .allega,
+    .chat .icons .cerca{
+        display: none;
+        
+    }
+
+}
+
+
+
+@media screen and (max-width: 640px){
+
+    .background{
+        height: 100vh;
+    }
+
+    .container{
+        height: 100%;
+    }
+
+    .container aside{
+        width: 100%;
+    }
+
+    .container .contacts{
+        overflow: auto;
+    }
+
+    .chat_container{
+        display: none;
+    }
+
+}
